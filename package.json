@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A node.js api to request animes from aplication.",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
