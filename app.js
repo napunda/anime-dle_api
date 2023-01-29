@@ -15,6 +15,4 @@ const router = require("./src/routes/router");
 
 app.use("/", router);
 
-app.listen(port, () => {
-  console.log(`Server started: http://localhost:${port}/`);
-});
+app.listen(port);
