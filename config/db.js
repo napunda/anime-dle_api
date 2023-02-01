@@ -7,9 +7,11 @@ mongoose.set("strictQuery", true);
 const user = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;
 
+// `mongodb://${user}:${password}@containers-us-west-132.railway.app:7238`
+
 async function main() {
   await mongoose.connect(
-    `mongodb://${user}:${password}@containers-us-west-132.railway.app:7238`
+    `mongodb+srv://${user}:${password}@cluster0.lc2chss.mongodb.net/?retryWrites=true&w=majority`
   );
 }
 
