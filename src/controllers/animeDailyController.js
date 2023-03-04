@@ -20,7 +20,8 @@ exports.setItem = async (req, res) => {
     });
 
     await anime.save();
-    res.json({ message: "Anime diário salvo com sucesso!" });
+    // res.json({ message: "Anime diário salvo com sucesso!" });
+    res.json({ anime });
   } catch (error) {
     res.status(500).json({ message: "Erro ao salvar anime.", error });
   }
@@ -31,10 +32,51 @@ exports.get = async (req, res) => {
     const animes = await DailyAnime.find();
 
     if (!animes.length) {
-      this.setItem();
+      await this.setItem();
     } else {
     }
 
     res.json(animes[0]);
-  } catch (error) {}
+  } catch (error) {
+    res.json("error");
+  }
 };
+
+// const get = async (req, res) => {
+//   try {
+//     const animes = await DailyAnime.find();
+
+//     if (!animes.length) {
+//       setItem();
+//       const animes = await DailyAnime.find();
+//       res.json(animes[0]);
+//     }
+//     // if (!animes.length) {
+//     //   console.log("Aqui");
+//     // } else {
+//     //   const date = new Date(animes.at(0).created_at);
+//     //   const dateNow = new Date(Date.now());
+
+//     //   function formatDate(date) {
+//     //     const year = date.getFullYear();
+//     //     const day = date.getDate();
+//     //     const month = date.getMonth() + 1;
+
+//     //     return `${day <= 9 ? `0` + day : day}/${
+//     //       month <= 9 ? `0` + month : month
+//     //     }/${year}`;
+//     //   }
+//     //   if (formatDate(dateNow) === formatDate(date)) {
+//     //     res.json(animes[0]);
+//     //   } else {
+//     //     // this.setItem();
+//     //     // const animes = await DailyAnime.find();
+//     //     res.json("Anime de hoje não setado");
+//     //   }
+//     // }
+//   } catch (error) {
+//     res.status(500).json({ message: "Erro ao buscar anime.", error });
+//   }
+// };
+
+// module.exports = { get, setItem };

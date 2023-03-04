@@ -4,12 +4,12 @@ require("dotenv").config();
 
 mongoose.set("strictQuery", true);
 
-const user = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
 
 async function main() {
   await mongoose.connect(
-    `mongodb://${user}:${password}@containers-us-west-132.railway.app:7238`
+    `mongodb+srv://${user}:${password}@cluster0.uutiwh5.mongodb.net/?retryWrites=true&w=majority`
   );
 }
 

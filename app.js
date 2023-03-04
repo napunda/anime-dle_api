@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 require("dotenv").config();
 require("./config/db");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ? Number(process.env.PORT) : 5000;
 const router = require("./src/routes/router");
 
 app.use("/", router);
