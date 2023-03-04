@@ -2,14 +2,15 @@
   "name": "anime-dle",
   "version": "1.0.0",
   "description": "A node.js api to request animes from aplication.",
-  "main": "index.js",
+  "main": "app.js",
   "engines": {
     "node": "16.19.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "node app.js"
   },
   "keywords": [],
   "author": "Anderson Souza",
